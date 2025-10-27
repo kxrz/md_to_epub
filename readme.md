@@ -30,6 +30,8 @@ A Python tool to convert Markdown files to beautifully formatted ePub books with
 - **YAML frontmatter support** for per-file metadata
 - **Rich terminal output** with colors, panels, and progress bars
 
+![](terminal.png)
+
 ## Installation
 
 ### 1. Prerequisites
