@@ -1,0 +1,302 @@
+/* Optimized CSS for ePub - MD to ePub Converter */
+/* Created by: kxrz (https://github.com/kxrz) */
+
+/* ========== Reset & Base Styles ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Georgia", "Palatino", "Times New Roman", serif;
+    font-size: 1em;
+    line-height: 1.7;
+    text-align: justify;
+    word-wrap: break-word;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    adobe-hyphenate: auto;
+}
+
+/* ========== Headings ========== */
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Helvetica Neue", "Arial", sans-serif;
+    font-weight: bold;
+    line-height: 1.3;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    page-break-after: avoid;
+    page-break-inside: avoid;
+    -webkit-column-break-after: avoid;
+    text-align: left;
+}
+
+h1 {
+    font-size: 2em;
+    margin-top: 0;
+    margin-bottom: 1em;
+    padding-bottom: 0.3em;
+    border-bottom: 2px solid #333;
+    page-break-before: always;
+}
+
+/* First h1 should not force page break */
+h1:first-of-type {
+    page-break-before: auto;
+}
+
+h2 {
+    font-size: 1.6em;
+    color: #2c3e50;
+    margin-top: 2em;
+}
+
+h3 {
+    font-size: 1.3em;
+    color: #34495e;
+}
+
+h4 {
+    font-size: 1.1em;
+    color: #555;
+}
+
+h5, h6 {
+    font-size: 1em;
+    color: #666;
+    font-weight: 600;
+}
+
+/* ========== Paragraphs ========== */
+p {
+    margin: 0.8em 0;
+    text-indent: 1.5em;
+    orphans: 2;
+    widows: 2;
+}
+
+/* No indentation for first paragraph or after headings */
+p:first-child,
+h1 + p, h2 + p, h3 + p,
+h4 + p, h5 + p, h6 + p,
+blockquote + p,
+ul + p, ol + p,
+pre + p {
+    text-indent: 0;
+}
+
+/* ========== Links ========== */
+a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #666;
+}
+
+/* ========== Lists ========== */
+ul, ol {
+    margin: 1em 0;
+    padding-left: 2em;
+}
+
+li {
+    margin: 0.5em 0;
+    line-height: 1.6;
+}
+
+li > p {
+    text-indent: 0;
+}
+
+/* Nested lists */
+ul ul, ol ol, ul ol, ol ul {
+    margin: 0.3em 0;
+}
+
+/* ========== Code ========== */
+code {
+    font-family: "Courier New", "Consolas", "Monaco", monospace;
+    font-size: 0.9em;
+    background-color: #f5f5f5;
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    word-wrap: break-word;
+}
+
+pre {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 1em;
+    margin: 1em 0;
+    overflow-x: auto;
+    line-height: 1.4;
+    page-break-inside: avoid;
+}
+
+pre code {
+    background-color: transparent;
+    padding: 0;
+    border: none;
+}
+
+/* ========== Blockquotes ========== */
+blockquote {
+    margin: 1.5em 1em;
+    padding: 0.5em 1em;
+    border-left: 4px solid #2196f3;
+    background-color: #f9f9f9;
+    font-style: italic;
+    color: #555;
+    page-break-inside: avoid;
+}
+
+blockquote p {
+    text-indent: 0;
+}
+
+blockquote cite {
+    display: block;
+    text-align: right;
+    font-size: 0.9em;
+    margin-top: 0.5em;
+    color: #777;
+}
+
+/* ========== Images ========== */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1.5em auto;
+    page-break-inside: avoid;
+}
+
+figure {
+    margin: 1.5em 0;
+    text-align: center;
+    page-break-inside: avoid;
+}
+
+figcaption {
+    font-size: 0.9em;
+    font-style: italic;
+    color: #666;
+    margin-top: 0.5em;
+}
+
+/* ========== Tables ========== */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1.5em 0;
+    font-size: 0.9em;
+    page-break-inside: avoid;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 0.6em 0.8em;
+    text-align: left;
+    text-indent: 0;
+}
+
+th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+    color: #333;
+}
+
+tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+/* ========== Horizontal Rules ========== */
+hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 2em 0;
+    page-break-after: avoid;
+}
+
+/* ========== Special Elements ========== */
+strong, b {
+    font-weight: bold;
+}
+
+em, i {
+    font-style: italic;
+}
+
+mark {
+    background-color: #ffeb3b;
+    padding: 0.1em 0.2em;
+}
+
+del, s {
+    text-decoration: line-through;
+    color: #999;
+}
+
+sup, sub {
+    font-size: 0.75em;
+    line-height: 0;
+}
+
+/* ========== Definition Lists ========== */
+dl {
+    margin: 1em 0;
+}
+
+dt {
+    font-weight: bold;
+    margin-top: 1em;
+}
+
+dd {
+    margin-left: 2em;
+    margin-bottom: 0.5em;
+}
+
+/* ========== Footnotes ========== */
+.footnote {
+    font-size: 0.9em;
+    vertical-align: super;
+}
+
+.footnotes {
+    margin-top: 2em;
+    padding-top: 1em;
+    border-top: 1px solid #ccc;
+    font-size: 0.9em;
+}
+
+/* ========== Page Breaks ========== */
+.page-break {
+    page-break-after: always;
+}
+
+.no-break {
+    page-break-inside: avoid;
+}
+
+/* ========== ePub-specific Optimizations ========== */
+@page {
+    margin: 1em;
+}
+
+/* Prevent awkward breaks */
+h1, h2, h3, h4, h5, h6 {
+    -webkit-column-break-after: avoid;
+    page-break-after: avoid;
+}
+
+table, figure, img, pre, blockquote {
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+}
