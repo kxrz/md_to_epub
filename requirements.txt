@@ -1,0 +1,14 @@
+# MD to ePub Converter - Dependencies
+# Author: kxrz (iamkxrz on Reddit)
+
+# Interactive terminal UI
+questionary>=2.0.1
+
+# Rich text and beautiful formatting in terminal
+rich>=13.7.0
+
+# YAML frontmatter parsing
+PyYAML>=6.0.1
+
+# Optional: Markdown processing (for metadata extraction)
+python-frontmatter>=1.1.0
