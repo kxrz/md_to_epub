@@ -401,7 +401,7 @@ table, figure, img, pre, blockquote {
                 console.print(f"[green]✓[/green] Using existing CSS: [cyan]{self.default_css_path}[/cyan]")
                 return str(self.default_css_path)
             else:
-                custom_path = questionary.path(
+                custom_path = questionary.text(
                     "Enter path to your custom CSS file:",
                     style=custom_style
                 ).ask()
@@ -422,7 +422,7 @@ table, figure, img, pre, blockquote {
             if create_css:
                 return self.create_optimized_css()
             else:
-                custom_path = questionary.path(
+                custom_path = questionary.text(
                     "Enter path to your custom CSS file:",
                     style=custom_style
                 ).ask()
@@ -750,9 +750,8 @@ def main_menu(converter: EpubConverter):
     ).ask()
 
     if choice == choices[0]:  # Single file
-        file_path = questionary.path(
-            "Select markdown file:",
-            only_files=True,
+        file_path = questionary.text(
+            "Markdown file path:",
             style=custom_style
         ).ask()
 
@@ -775,9 +774,8 @@ def main_menu(converter: EpubConverter):
 
             output_dir = None
             if use_custom_output:
-                output_path = questionary.path(
-                    "Select output directory:",
-                    only_directories=True,
+                output_path = questionary.text(
+                    "Output directory path:",
                     style=custom_style
                 ).ask()
                 if output_path:
@@ -791,9 +789,8 @@ def main_menu(converter: EpubConverter):
 
         md_files = []
         while True:
-            file_path = questionary.path(
-                f"File #{len(md_files) + 1} (or press Enter to finish):",
-                only_files=True,
+            file_path = questionary.text(
+                f"File #{len(md_files) + 1} path (or press Enter to finish):",
                 style=custom_style
             ).ask()
 
@@ -830,9 +827,8 @@ def main_menu(converter: EpubConverter):
 
         output_dir = None
         if use_custom_output:
-            output_path = questionary.path(
-                "Select output directory:",
-                only_directories=True,
+            output_path = questionary.text(
+                "Output directory path:",
                 style=custom_style
             ).ask()
             if output_path:
@@ -841,9 +837,8 @@ def main_menu(converter: EpubConverter):
         converter.merge_md_files(md_files, output_name, output_dir, metadata)
 
     elif choice == choices[2]:  # Directory to multiple ePub
-        dir_path = questionary.path(
-            "Select directory containing markdown files:",
-            only_directories=True,
+        dir_path = questionary.text(
+            "Directory path containing markdown files:",
             style=custom_style
         ).ask()
 
@@ -868,9 +863,8 @@ def main_menu(converter: EpubConverter):
 
         output_dir = None
         if use_custom_output:
-            output_path = questionary.path(
-                "Select output directory:",
-                only_directories=True,
+            output_path = questionary.text(
+                "Output directory path:",
                 style=custom_style
             ).ask()
             if output_path:
@@ -895,9 +889,8 @@ def main_menu(converter: EpubConverter):
         converter.batch_convert_directory(input_dir, output_dir, recursive, metadata_template)
 
     elif choice == choices[3]:  # Merge directory into one ePub
-        dir_path = questionary.path(
-            "Select directory containing markdown files:",
-            only_directories=True,
+        dir_path = questionary.text(
+            "Directory path containing markdown files:",
             style=custom_style
         ).ask()
 
@@ -955,9 +948,8 @@ def main_menu(converter: EpubConverter):
 
         output_dir = None
         if use_custom_output:
-            output_path = questionary.path(
-                "Select output directory:",
-                only_directories=True,
+            output_path = questionary.text(
+                "Output directory path:",
                 style=custom_style
             ).ask()
             if output_path:
