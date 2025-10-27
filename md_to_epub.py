@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 MD to ePub Converter - Professional Edition
-Author: kxrz (iamkxrz on Reddit)
+Created by: kxrz (https://github.com/kxrz)
 A universal tool to convert Markdown files to beautiful ePub format
 with interactive TUI and advanced features.
 
@@ -53,7 +53,7 @@ class EpubConverter:
 
     def __init__(self):
         self.default_css_path = Path('style.css')
-        self.author = "kxrz"
+        self.author = ""
         self.css_file = None
 
     def check_pandoc(self) -> bool:
@@ -79,7 +79,7 @@ class EpubConverter:
     def create_optimized_css(self, css_path: str = 'style.css') -> str:
         """Create an optimized CSS file for ePub rendering."""
         css_content = """/* Optimized CSS for ePub - MD to ePub Converter */
-/* Author: kxrz (iamkxrz on Reddit) */
+/* Created by: kxrz (https://github.com/kxrz) */
 
 /* ========== Reset & Base Styles ========== */
 * {
@@ -725,7 +725,7 @@ def display_welcome():
     console.print(Panel.fit(
         "[bold cyan]MD to ePub Converter[/bold cyan]\n"
         "[dim]Professional Edition[/dim]\n\n"
-        "Author: [yellow]kxrz[/yellow] ([dim]iamkxrz on Reddit[/dim])\n"
+        "Created by: [yellow]kxrz[/yellow] ([dim]https://github.com/kxrz[/dim])\n"
         "Universal tool for converting Markdown to ePub",
         border_style="cyan"
     ))
@@ -970,7 +970,7 @@ def main_menu(converter: EpubConverter):
 
     elif choice == choices[5]:  # Exit
         console.print("\n[cyan]Thanks for using MD to ePub Converter![/cyan]")
-        console.print("[dim]by kxrz (iamkxrz on Reddit)[/dim]\n")
+        console.print("[dim]Created by kxrz (https://github.com/kxrz)[/dim]\n")
         sys.exit(0)
 
 
@@ -1132,7 +1132,7 @@ def main():
             break
 
     console.print("\n[cyan]Thanks for using MD to ePub Converter![/cyan]")
-    console.print("[dim]by kxrz (iamkxrz on Reddit)[/dim]\n")
+    console.print("[dim]Created by kxrz (https://github.com/kxrz)[/dim]\n")
 
 
 if __name__ == '__main__':

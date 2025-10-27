@@ -1,6 +1,6 @@
 # MD to ePub Converter - Professional Edition
 
-**Author:** kxrz ([iamkxrz on Reddit](https://reddit.com/u/iamkxrz))
+**Created by:** kxrz ([GitHub](https://github.com/kxrz))
 
 A universal, professional-grade Python tool to convert Markdown files to beautifully formatted ePub books with an interactive terminal interface and advanced features.
 
@@ -83,7 +83,7 @@ You'll see a beautiful welcome screen and menu with options:
 │         MD to ePub Converter                     │
 │         Professional Edition                     │
 │                                                  │
-│ Author: kxrz (iamkxrz on Reddit)                 │
+│ Created by: kxrz (https://github.com/kxrz)       │
 │ Universal tool for converting Markdown to ePub   │
 └─────────────────────────────────────────────────┘
 
@@ -472,7 +472,7 @@ md_to_epub/
 
 This is a personal project by kxrz, but suggestions and feedback are welcome!
 
-Issues and improvements: Contact on Reddit u/iamkxrz
+Issues and improvements: [Open an issue on GitHub](https://github.com/kxrz/md_to_epub/issues)
 
 ## Version History
 
@@ -495,11 +495,11 @@ Issues and improvements: Contact on Reddit u/iamkxrz
 
 Free to use and modify for personal and commercial projects.
 
-Credit appreciated but not required: kxrz (iamkxrz on Reddit)
+Credit appreciated but not required: kxrz ([GitHub](https://github.com/kxrz))
 
 ## Credits
 
-**Author**: kxrz (iamkxrz on Reddit)
+**Created by**: kxrz ([GitHub](https://github.com/kxrz))
 
 **Built with**:
 - [Pandoc](https://pandoc.org/) - Universal document converter
@@ -516,4 +516,4 @@ Credit appreciated but not required: kxrz (iamkxrz on Reddit)
 For help: `python md_to_epub.py --help`
 For interactive mode: `python md_to_epub.py`
 
-*Made with care for the reading community by kxrz*
+*Made with care for the reading community by [kxrz](https://github.com/kxrz)*
