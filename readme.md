@@ -1,8 +1,10 @@
-# MD to ePub Converter - Professional Edition
+# MD to ePub Converter - Interactive Edition
 
 **Created by:** kxrz ([GitHub](https://github.com/kxrz))
 
-A universal, professional-grade Python tool to convert Markdown files to beautifully formatted ePub books with an interactive terminal interface and advanced features.
+A Python tool to convert Markdown files to beautifully formatted ePub books with an interactive terminal interface and advanced features.
+
+![](cover.png)
 
 ## Features
 
@@ -80,11 +82,11 @@ You'll see a beautiful welcome screen and menu with options:
 
 ```
 ┌─────────────────────────────────────────────────┐
-│         MD to ePub Converter                     │
-│         Professional Edition                     │
-│                                                  │
-│ Created by: kxrz (https://github.com/kxrz)       │
-│ Universal tool for converting Markdown to ePub   │
+│         MD to ePub Converter                    │
+│         Professional Edition                    │
+│                                                 │
+│ Created by: kxrz (https://github.com/kxrz)      │
+│ Universal tool for converting Markdown to ePub  │
 └─────────────────────────────────────────────────┘
 
 ? What would you like to do?
