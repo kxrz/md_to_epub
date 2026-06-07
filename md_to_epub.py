@@ -558,6 +558,7 @@ table, figure, img, pre, blockquote {
             '--toc',
             '--toc-depth=3',
             '--epub-chapter-level=2',
+            '--resource-path', str(md_file.parent),
         ]
 
         # Add CSS
@@ -631,6 +632,8 @@ table, figure, img, pre, blockquote {
         else:
             output_path = md_files[0].parent / f"{output_name}.epub"
 
+        resource_paths = list({str(f.parent) for f in md_files})
+
         # Build pandoc command
         cmd = [
             'pandoc',
@@ -639,6 +642,7 @@ table, figure, img, pre, blockquote {
             '--toc',
             '--toc-depth=3',
             '--epub-chapter-level=2',
+            '--resource-path', os.pathsep.join(resource_paths),
         ]
 
         # Add CSS
