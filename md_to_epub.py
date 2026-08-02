@@ -756,6 +756,9 @@ def main_menu(converter: EpubConverter):
         ).ask()
 
         if file_path:
+            file_path = file_path.strip()
+
+        if file_path:
             md_file = Path(file_path)
             if md_file.suffix != '.md':
                 console.print("[red]✗[/red] File must have .md extension")
