@@ -1,3 +1,4 @@
+import os
 import struct
 import sys
 import zipfile
@@ -70,7 +71,8 @@ def test_clean_dragged_paths(tmp_path):
     f = tmp_path / "My Notes.md"
     f.write_text("x")
     assert m.parse_dropped_paths(f"'{f}'") == [f]
-    assert m.parse_dropped_paths(str(f).replace(" ", "\\ ") + "  ") == [f]
+    if os.name != "nt":  # backslash-escaped spaces only exist in Unix shells
+        assert m.parse_dropped_paths(str(f).replace(" ", "\\ ") + "  ") == [f]
     g = tmp_path / "b.md"
     g.write_text("y")
     assert m.parse_dropped_paths(f"'{f}' '{g}'") == [f, g]
