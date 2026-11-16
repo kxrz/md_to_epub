@@ -41,3 +41,9 @@ ENV/
 # OS
 .DS_Store
 Thumbs.db
+
+# Local stylesheet overrides
+# epub.css
+
+# Test output
+.pytest_cache/

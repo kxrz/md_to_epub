@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "md-to-epub"
+version = "3.0.0"
+description = "Turn Markdown notes into clean ePub books for your e-reader."
+readme = "readme.md"
+requires-python = ">=3.9"
+license = { text = "Free to use and modify" }
+authors = [{ name = "kxrz" }]
+keywords = ["markdown", "epub", "ebook", "kobo", "kindle", "obsidian", "pandoc"]
+dependencies = [
+    "questionary>=2.0.1",
+    "rich>=13.7.0",
+    "PyYAML>=6.0.1",
+    "pypandoc_binary>=1.13",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+
+[project.urls]
+Homepage = "https://github.com/kxrz/md_to_epub"
+
+[project.scripts]
+md2epub = "md_to_epub:main"
+md-to-epub = "md_to_epub:main"
+
+[tool.setuptools]
+py-modules = ["md_to_epub"]

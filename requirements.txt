@@ -1,14 +1,6 @@
-# MD to ePub Converter - Dependencies
-# Author: kxrz (iamkxrz on Reddit)
-
-# Interactive terminal UI
+# MD to ePub - dependencies (or simply: pip install .)
 questionary>=2.0.1
-
-# Rich text and beautiful formatting in terminal
 rich>=13.7.0
-
-# YAML frontmatter parsing
 PyYAML>=6.0.1
-
-# Optional: Markdown processing (for metadata extraction)
-python-frontmatter>=1.1.0
+# Bundles Pandoc: no separate install needed
+pypandoc_binary>=1.13
