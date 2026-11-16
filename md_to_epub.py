@@ -155,6 +155,8 @@ blockquote {
 
 /* ---------- Images & figures ---------- */
 img { max-width: 100%; height: auto; }
+/* An image on its own line: centered block, not shifted by the paragraph indent */
+p > img { display: block; margin: 1em auto; }
 figure {
     margin: 1.2em 0;
     text-align: center;
@@ -721,13 +723,21 @@ def plan_merge(
 # --------------------------------------------------------------------------- #
 # Output
 # --------------------------------------------------------------------------- #
+def display_path(path: Path) -> str:
+    """Short path for humans: relative to the current folder, or with ~ for home."""
+    full = path.resolve()
+    for base, prefix in ((Path.cwd().resolve(), ""), (Path.home().resolve(), "~/")):
+        try:
+            return prefix + full.relative_to(base).as_posix()
+        except ValueError:
+            continue
+    return str(full)
+
+
 def report(result: Result, book: Book, quiet_warnings: bool = False) -> None:
     if result.ok:
         size = human_size(result.output.stat().st_size) if result.output.exists() else "?"
-        try:
-            shown = result.output.resolve().relative_to(Path.cwd().resolve())
-        except ValueError:
-            shown = result.output
+        shown = display_path(result.output)
         console.print(f"[green]✓[/green] [bold]{shown}[/bold] [dim]({size})[/dim]")
     else:
         console.print(f"[red]✗ Could not create {result.output.name}[/red]")
@@ -777,8 +787,8 @@ def interactive(pandoc: str) -> int:
     from questionary import Choice, Style
 
     style = Style([
-        ("qmark", "fg:#673ab7 bold"), ("question", "bold"), ("answer", "fg:#2196f3 bold"),
-        ("pointer", "fg:#673ab7 bold"), ("highlighted", "fg:#673ab7 bold"),
+        ("qmark", "fg:#8b5cf6 bold"), ("question", "bold"), ("answer", "fg:#2196f3 bold"),
+        ("pointer", "fg:#8b5cf6 bold"), ("highlighted", "fg:#8b5cf6 bold"),
         ("selected", "fg:#2196f3"), ("instruction", "fg:#888888"),
     ])
 
@@ -815,7 +825,7 @@ def interactive(pandoc: str) -> int:
             choices = [Choice(f.name, value=[f]) for f in local[:12]]
             if len(local) > 1:
                 choices.insert(0, Choice(f"📁 This whole folder ({len(local)} files)", value=[cwd]))
-            choices.append(Choice("⌨  Another file or folder…", value=None))
+            choices.append(Choice("🔎 Another file or folder…", value=None))
             sources = ask(questionary.select("What do you want to convert?", choices=choices, style=style))
         if not sources:
             raw = ask(questionary.path(
