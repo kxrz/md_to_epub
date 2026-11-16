@@ -7,7 +7,7 @@ name = "md-to-epub"
 version = "3.0.0"
 description = "Turn Markdown notes into clean ePub books for your e-reader."
 readme = "readme.md"
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 license = { text = "Free to use and modify" }
 authors = [{ name = "kxrz" }]
 keywords = ["markdown", "epub", "ebook", "kobo", "kindle", "obsidian", "pandoc"]

@@ -13,7 +13,7 @@ One file, a folder of chapters or an Obsidian vault: drag it into the terminal, 
 
 ## 1. Install
 
-You only need **Python 3.9+**. Pandoc is bundled, nothing else to install.
+You only need **Python 3.10+**. Pandoc is bundled, nothing else to install.
 
 ```bash
 uv tool install git+https://github.com/kxrz/md_to_epub
